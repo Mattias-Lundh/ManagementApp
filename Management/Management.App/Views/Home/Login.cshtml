@@ -2,7 +2,25 @@
 @{
     ViewBag.Title = "Login";
 }
-
-<h2>Login</h2>
-@Html.ActionLink("Register", "Register", "Home")
-
+<html>
+<head>
+    <title> Transparent Login Form Design </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="login-box">
+        <img src="~/Art/avatar.png" class="avatar">
+        <h1>Login Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <input type="submit" name="submit" value="Login">
+            <ForgotPassword href="#">Forgot Password</ForgotPassword>
+            <Register href="#">Register</Register>
+            @Html.ActionLink("Register", "Register", "Home") <!-- how to make the link interact with Register -->
+        </form>
+    </div>
+</body>
+</html>
