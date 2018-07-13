@@ -22,5 +22,10 @@ namespace Management.App.Controllers
         {
             return View();
         }
+        
+        public ActionResult RegisterNewUser()
+        {
+            return View();
+        }
     }
 }
