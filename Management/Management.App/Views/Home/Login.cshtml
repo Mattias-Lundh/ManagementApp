@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="login-box">
+    <div class="login-box box">
         <img src="~/Art/avatar.png" class="avatar">
         <h1>Login Here</h1>
         <form>
@@ -17,9 +17,8 @@
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter Password">
             <input type="submit" name="submit" value="Login">
-            <forgotpassword href="#">Forgot Password</forgotpassword>
-            <a href="/Home/Register?Length=4">Register</a>
-            @Html.ActionLink("Register", "Register", "Home",new{ @class="register" }) <!-- how to make the link interact with Register -->
+            @Html.ActionLink("Forgot Password", "passwordreset", "Home")
+            @Html.ActionLink("Register", "Register", "Home")
         </form>
     </div>
 </body>

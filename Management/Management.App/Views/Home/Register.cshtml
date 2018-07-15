@@ -1,6 +1,6 @@
-﻿
+﻿@model Management.App.Models.RegisterUser
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Register"; 
 }
 
 <h2>Register</h2>
@@ -16,15 +16,16 @@
         <h1>Register</h1>
         <form>
             <p>First Name</p>
+            <!-- @Html.TextBoxFor(m => m.FirstName) This replaces the below input later?-->
             <input type="text" name="firstname" placeholder="First Name">
             <p>Last Name</p>
             <input type="text" name="lastname" placeholder="Last Name">
-            <p>Email Address</p>
+            <p>Email Address <font color="red">*</font> </p>
             <input type="text" name="emailaddress" placeholder="Enter Email Address">
-            <p>Set Password</p>
+            <p>Set Password <font color="red">*</font> </p>
             <input type="password" name="firstpassword" placeholder="Enter Password">
-            <p>Retype Password</p>
-            <input type="password" name="secondpassword" placeholder="Enter Password">
+            <p>Retype Password <font color="red">*</font> </p>
+            <input type="password" name="secondpassword" placeholder="Confirm Password">
             <input type="submit" name="register" value="Register">
         </form>
     </div>
