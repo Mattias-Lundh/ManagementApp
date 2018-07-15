@@ -20,6 +20,23 @@
     padding: 70px 30px;
 }
 
+.registration-box {
+    width: 320px;
+    height: 520px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.box input {
+    color: red; 
+}
+
 .avatar {
     width: 100px;
     height: 100px;
@@ -73,22 +90,33 @@ h1 {
             color: #000;
         }
 
-.login-box ForgotPassword {
+.login-box forgotpassword {
     text-decoration: none;
     font-size: 14px;
     color: #fff;
 }
 
-    .login-box ForgotPassword:hover {
+    .login-box forgotpassword:hover {
         color: #39dc79;
     }
 
-.login-box Register {
+.login-box register {
     text-decoration: none;
     font-size: 14px;
     color: #fff;
 }
 
-    .login-box Register:hover {
+    .login-box register:hover {
         color: #39dc79;
     }
+
+
+.login-box a register {
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.login-box a register:hover {
+    color: #39dc79;
+}

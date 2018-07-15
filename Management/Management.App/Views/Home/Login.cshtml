@@ -17,9 +17,9 @@
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter Password">
             <input type="submit" name="submit" value="Login">
-            <ForgotPassword href="#">Forgot Password</ForgotPassword>
-            <Register href="#">Register</Register>
-            @Html.ActionLink("Register", "Register", "Home") <!-- how to make the link interact with Register -->
+            <forgotpassword href="#">Forgot Password</forgotpassword>
+            <a href="/Home/Register?Length=4">Register</a>
+            @Html.ActionLink("Register", "Register", "Home",new{ @class="register" }) <!-- how to make the link interact with Register -->
         </form>
     </div>
 </body>
