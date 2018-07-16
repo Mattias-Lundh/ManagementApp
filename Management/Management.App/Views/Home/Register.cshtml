@@ -1,6 +1,6 @@
 ﻿@model Management.App.Models.RegisterUser
 @{
-    ViewBag.Title = "Register"; 
+    ViewBag.Title = "Register";
 }
 
 <h2>Register</h2>
@@ -14,20 +14,22 @@
     <div class="registration-box box">
         <img src="~/Art/avatar.png" class="avatar">
         <h1>Register</h1>
-        <form>
-            <p>First Name</p>
-            <!-- @Html.TextBoxFor(m => m.FirstName) This replaces the below input later?-->
-            <input type="text" name="firstname" placeholder="First Name">
-            <p>Last Name</p>
-            <input type="text" name="lastname" placeholder="Last Name">
-            <p>Email Address <font color="red">*</font> </p>
-            <input type="text" name="emailaddress" placeholder="Enter Email Address">
-            <p>Set Password <font color="red">*</font> </p>
-            <input type="password" name="firstpassword" placeholder="Enter Password">
-            <p>Retype Password <font color="red">*</font> </p>
-            <input type="password" name="secondpassword" placeholder="Confirm Password">
-            <input type="submit" name="register" value="Register">
-        </form>
+
+        @using (Html.BeginForm("RegisterUserGo", "Home", FormMethod.Post))
+        {
+                <p> First Name </p>
+                @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name" })
+                <p> Last Name </p>
+                @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name" })
+                <p> Email Address <font color = "red" > *</font> </p>
+                @Html.TextBoxFor(m => m.EmailAddress, new { @placeholder = "Enter Email Address" })
+                <p> Password <font color = "red" > *</font> </p>
+                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password" })
+                <p> Confirm Password <font color = "red" > *</font> </p>
+                @Html.TextBoxFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
+                <input type = "submit" value = "Register"/>
+        }
+
     </div>
 </body>
 </html>

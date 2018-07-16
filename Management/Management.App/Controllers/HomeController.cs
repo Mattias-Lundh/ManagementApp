@@ -23,8 +23,9 @@ namespace Management.App.Controllers
         {
             return View();
         }
-        
-        public ActionResult RegisterUserGo(RegisterUser newUser, string returnURL)
+
+        [HttpPost]
+        public ActionResult RegisterUserGo(RegisterUser newUser, string returnURL =" ")
         {
             if(ModelState.IsValid)
             {
