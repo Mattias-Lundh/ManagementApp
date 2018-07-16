@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Management.App.Models;
+using Management.Data;
+using Management.Domain.Models;
 
 namespace Management.App.Controllers
 {
@@ -21,22 +23,32 @@ namespace Management.App.Controllers
 
         public ActionResult Register()
         {
-            return View();
+            RegisterUser model = new RegisterUser();       
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult RegisterUserGo(RegisterUser newUser, string returnURL =" ")
+        public ActionResult RegisterUserGo(RegisterUser user)
         {
             if(ModelState.IsValid)
             {
-                // continue here
+                Database database = new Database();
+                User newUser = new User();
+                newUser.FirstName = user.FirstName;
+                newUser.LastName = user.LastName;
+                newUser.EmailAddress = user.EmailAddress;
+                newUser.Password = user.Password;
+                database.AddUser(newUser);
+                return RedirectToAction("Login");
             }
-            return View();
+            return View("Register",user);
         }
+
         public ActionResult PasswordReset()
         {
             return View();
         }
+
         public ActionResult PasswordResetGo()
         {
             return View();

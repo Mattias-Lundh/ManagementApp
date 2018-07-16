@@ -17,17 +17,20 @@
 
         @using (Html.BeginForm("RegisterUserGo", "Home", FormMethod.Post))
         {
-                <p> First Name </p>
-                @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name" })
-                <p> Last Name </p>
-                @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name" })
-                <p> Email Address <font color = "red" > *</font> </p>
-                @Html.TextBoxFor(m => m.EmailAddress, new { @placeholder = "Enter Email Address" })
-                <p> Password <font color = "red" > *</font> </p>
-                @Html.TextBoxFor(m => m.Password, new { @placeholder = "Enter Password" })
-                <p> Confirm Password <font color = "red" > *</font> </p>
-                @Html.TextBoxFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
-                <input type = "submit" value = "Register"/>
+            <p> First Name </p>
+            @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "First Name" })
+            <p> Last Name </p>
+            @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Last Name" })
+            <p> Email Address <font color="red"> *</font> </p>
+            @Html.ValidationMessageFor(p => p.EmailAddress)
+            @Html.TextBoxFor(m => m.EmailAddress, new { @placeholder = "Enter Email Address" })
+            <p> Password <font color="red"> *</font> </p>
+            @Html.ValidationMessageFor(p => p.Password)
+            @Html.PasswordFor(m => m.Password, new { @placeholder = "Enter Password" })
+            <p> Confirm Password <font color="red"> *</font> </p>
+            @Html.ValidationMessageFor(p => p.ConfirmPassword)
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm Password" })
+            <input type="submit" value="Register" />
         }
 
     </div>
