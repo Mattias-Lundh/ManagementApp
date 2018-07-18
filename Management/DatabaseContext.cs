@@ -9,9 +9,9 @@ namespace Management.Data
     class DatabaseContext : DbContext
     {
         private string _connectionString;
-        public DatabaseContext()
+        public DatabaseContext(string connectionString)
         {
-            _connectionString = "";
+            _connectionString = connectionString;
         }
 
         public DbSet<User> Users { get; set; }
@@ -23,9 +23,8 @@ namespace Management.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=managementDB;Trusted_Connection=True;");
+            optionBuilder.UseSqlServer(_connectionString);
         }
     }
+
 }
-
-

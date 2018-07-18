@@ -189,7 +189,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -223,7 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Management.Data\Management.Data.csproj">
-      <Project>{99084260-da7f-41d0-a8a9-8d4a213d1575}</Project>
+      <Project>{5df3c490-ec8c-4747-8903-ea0f13ce23de}</Project>
       <Name>Management.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Management.Domain\Management.Domain.csproj">

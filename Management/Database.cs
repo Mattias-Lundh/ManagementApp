@@ -17,7 +17,7 @@ namespace Management.Data
 
         public void AddUser(User user)
         {
-            using (DatabaseContext context = new DatabaseContext())
+            using (DatabaseContext context = new DatabaseContext(_connectionString))
             {
                 context.Users.Add(user);
                 context.SaveChanges();

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Management.App.Models;
 using Management.Data;
 using Management.Domain.Models;
+using System.Web.Configuration;
 
 namespace Management.App.Controllers
 {
@@ -17,7 +18,7 @@ namespace Management.App.Controllers
         }
 
         public ActionResult Login()
-        {
+        {         
             return View();
         }
 
@@ -32,7 +33,8 @@ namespace Management.App.Controllers
         {
             if(ModelState.IsValid)
             {
-                Database database = new Database();
+                string constring = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                Database database = new Database(constring);
                 User newUser = new User();
                 newUser.FirstName = user.FirstName;
                 newUser.LastName = user.LastName;
