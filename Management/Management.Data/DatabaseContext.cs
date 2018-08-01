@@ -8,12 +8,6 @@ namespace Management.Data
 {
     class DatabaseContext : DbContext
     {
-        private string _connectionString;
-        public DatabaseContext()
-        {
-            _connectionString = "";
-        }
-
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

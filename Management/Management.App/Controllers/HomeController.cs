@@ -33,7 +33,7 @@ namespace Management.App.Controllers
         {
             if(ModelState.IsValid)
             {
-                string constring = WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+                string constring = WebConfigurationManager.ConnectionStrings["ManagementDB"].ConnectionString;
                 Database database = new Database(constring);
                 User newUser = new User();
                 newUser.FirstName = user.FirstName;
