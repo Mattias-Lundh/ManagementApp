@@ -8,8 +8,6 @@ namespace Management.Data
 {
     class DatabaseContext : DbContext
     {
-        private string _connectionString;
-
         public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,7 +17,7 @@ namespace Management.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=managementDB;Trusted_Connection=True;");
+            optionBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=managementDB;Trusted_Connection=True;");
         }
     }
 }
